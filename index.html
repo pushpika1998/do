@@ -1,0 +1,3061 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VivahPro Ultimate | Hindu Wedding Photography Planner</title>
+    <style>
+        /* Import Fonts */
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500;600&family=Cinzel:wght@400;500;600&family=Dancing+Script:wght@500;600&display=swap');
+        
+        :root {
+            --primary: #8B0000;
+            --secondary: #FFD700;
+            --accent: #2E8B57;
+            --accent2: #8A2BE2;
+            --accent3: #FF6347;
+            --dark: #1a1a2e;
+            --light: #f9f5f0;
+            --light-gray: #f0e6dd;
+            --medium: #b76e79;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 10px 30px rgba(139, 0, 0, 0.08);
+            --shadow-hover: 0 15px 40px rgba(139, 0, 0, 0.12);
+            --radius: 16px;
+            --gold-gradient: linear-gradient(135deg, #FFD700 0%, #DAA520 100%);
+            --red-gradient: linear-gradient(135deg, #8B0000 0%, #B22222 100%);
+            --purple-gradient: linear-gradient(135deg, #8A2BE2 0%, #9370DB 100%);
+            --orange-gradient: linear-gradient(135deg, #FF6347 0%, #FFA500 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            background-color: var(--light);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .vivahpro-container {
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 300px 1fr 400px;
+            gap: 30px;
+            min-height: 100vh;
+        }
+
+        /* Header Styles */
+        .vivahpro-header {
+            grid-column: 1 / -1;
+            background: var(--red-gradient);
+            color: white;
+            padding: 25px 40px;
+            border-radius: var(--radius);
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: fadeIn 0.8s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vivahpro-header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gold-gradient);
+        }
+
+        .vivahpro-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .vivahpro-logo-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gold-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .vivahpro-logo-text h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            line-height: 1.1;
+        }
+
+        .vivahpro-logo-text span {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 400;
+            margin-top: 5px;
+            display: block;
+        }
+
+        .vivahpro-user-controls {
+            display: flex;
+            gap: 15px;
+        }
+
+        .vivahpro-btn {
+            padding: 14px 28px;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .vivahpro-btn-primary {
+            background: var(--gold-gradient);
+            color: var(--primary);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .vivahpro-btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        .vivahpro-btn-secondary {
+            background-color: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .vivahpro-btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Left Sidebar - Ceremonies */
+        .vivahpro-ceremonies-sidebar {
+            background-color: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 25px;
+            height: fit-content;
+            position: sticky;
+            top: 30px;
+        }
+
+        .vivahpro-section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .vivahpro-section-title i {
+            color: var(--secondary);
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .vivahpro-ceremonies-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-height: calc(100vh - 200px);
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .vivahpro-ceremony-item {
+            padding: 18px 20px;
+            background-color: var(--light);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            position: relative;
+            overflow: hidden;
+            min-height: 85px;
+        }
+
+        .vivahpro-ceremony-item:hover {
+            transform: translateX(5px);
+            border-color: var(--secondary);
+            box-shadow: 0 5px 15px rgba(139, 0, 0, 0.1);
+        }
+
+        .vivahpro-ceremony-item.active {
+            border-color: var(--primary);
+            background-color: rgba(139, 0, 0, 0.05);
+        }
+
+        .vivahpro-ceremony-item.jaimala.active {
+            border-color: var(--accent2);
+            background-color: rgba(138, 43, 226, 0.05);
+        }
+
+        .vivahpro-ceremony-item.milni.active {
+            border-color: var(--accent3);
+            background-color: rgba(255, 99, 71, 0.05);
+        }
+
+        .vivahpro-ceremony-item::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: var(--red-gradient);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .vivahpro-ceremony-item.active::before {
+            opacity: 1;
+        }
+
+        .vivahpro-ceremony-item.jaimala::before {
+            background: var(--purple-gradient);
+        }
+
+        .vivahpro-ceremony-item.milni::before {
+            background: var(--orange-gradient);
+        }
+
+        .vivahpro-ceremony-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: var(--primary);
+            flex-shrink: 0;
+            margin-top: 5px;
+        }
+
+        .vivahpro-ceremony-item.active .vivahpro-ceremony-icon {
+            background: var(--red-gradient);
+            color: white;
+        }
+
+        .vivahpro-ceremony-item.jaimala .vivahpro-ceremony-icon {
+            color: var(--accent2);
+        }
+
+        .vivahpro-ceremony-item.jaimala.active .vivahpro-ceremony-icon {
+            background: var(--purple-gradient);
+            color: white;
+        }
+
+        .vivahpro-ceremony-item.milni .vivahpro-ceremony-icon {
+            color: var(--accent3);
+        }
+
+        .vivahpro-ceremony-item.milni.active .vivahpro-ceremony-icon {
+            background: var(--orange-gradient);
+            color: white;
+        }
+
+        .vivahpro-ceremony-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .vivahpro-ceremony-info h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark);
+            line-height: 1.3;
+            margin-bottom: 5px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .vivahpro-ceremony-info span {
+            font-size: 0.85rem;
+            color: var(--medium);
+            line-height: 1.4;
+            display: block;
+        }
+
+        /* Main Content Area */
+        .vivahpro-main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* Category Tabs */
+        .vivahpro-category-section {
+            background-color: white;
+            border-radius: var(--radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+        }
+
+        .vivahpro-tabs-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .vivahpro-category-tab {
+            padding: 20px;
+            background-color: var(--light);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vivahpro-category-tab:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .vivahpro-category-tab.active {
+            border-color: var(--primary);
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.05) 0%, rgba(255, 215, 0, 0.05) 100%);
+        }
+
+        .vivahpro-category-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 15px;
+            color: var(--primary);
+        }
+
+        .vivahpro-category-tab.active .vivahpro-category-icon {
+            background: var(--red-gradient);
+            color: white;
+        }
+
+        .vivahpro-category-tab h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        .vivahpro-category-tab span {
+            font-size: 0.9rem;
+            color: var(--medium);
+        }
+
+        /* Poses Grid - ENHANCED FOR MULTIPLE IMAGES */
+        .vivahpro-poses-section {
+            background-color: white;
+            border-radius: var(--radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+
+        .vivahpro-poses-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .vivahpro-poses-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .vivahpro-search-box {
+            position: relative;
+            width: 300px;
+            flex-shrink: 0;
+        }
+
+        .vivahpro-search-box input {
+            width: 100%;
+            padding: 16px 20px 16px 50px;
+            border-radius: 50px;
+            border: 2px solid var(--light-gray);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+            background-color: var(--light);
+        }
+
+        .vivahpro-search-box input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.1);
+        }
+
+        .vivahpro-search-box i {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--medium);
+        }
+
+        .vivahpro-pagination {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .vivahpro-page-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid var(--light-gray);
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .vivahpro-page-btn:hover {
+            border-color: var(--primary);
+            background-color: rgba(139, 0, 0, 0.05);
+        }
+
+        .vivahpro-page-info {
+            font-weight: 600;
+            color: var(--primary);
+            margin: 0 5px;
+        }
+
+        .vivahpro-poses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 25px;
+            max-height: 700px;
+            overflow-y: auto;
+            padding: 10px 5px;
+        }
+
+        .vivahpro-pose-card {
+            background-color: white;
+            border-radius: var(--radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+            border: 2px solid transparent;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vivahpro-pose-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .vivahpro-pose-card.selected {
+            border-color: var(--primary);
+            background-color: rgba(139, 0, 0, 0.03);
+        }
+
+        .vivahpro-pose-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--red-gradient);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .vivahpro-pose-card.selected::before {
+            opacity: 1;
+        }
+
+        .vivahpro-pose-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .vivahpro-pose-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .vivahpro-pose-style {
+            display: inline-block;
+            padding: 6px 15px;
+            background-color: var(--light-gray);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-top: 8px;
+        }
+
+        /* Enhanced Image Container for Multiple Images */
+        .vivahpro-images-container {
+            margin: 15px 0;
+        }
+
+        .vivahpro-saved-images-section {
+            margin-bottom: 20px;
+        }
+
+        .vivahpro-images-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .vivahpro-saved-images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 10px;
+            margin-bottom: 15px;
+            max-height: 150px;
+            overflow-y: auto;
+            padding: 5px;
+        }
+
+        .vivahpro-saved-image-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 100px;
+            background-color: var(--light-gray);
+        }
+
+        .vivahpro-saved-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .vivahpro-saved-image:hover {
+            transform: scale(1.05);
+        }
+
+        .vivahpro-image-remove-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: rgba(255, 99, 71, 0.9);
+            color: white;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 0.7rem;
+            transition: var(--transition);
+            opacity: 0;
+        }
+
+        .vivahpro-saved-image-item:hover .vivahpro-image-remove-btn {
+            opacity: 1;
+        }
+
+        .vivahpro-image-remove-btn:hover {
+            background-color: #ff4500;
+            transform: scale(1.1);
+        }
+
+        .vivahpro-no-images-placeholder {
+            text-align: center;
+            padding: 20px;
+            color: var(--medium);
+            background-color: var(--light);
+            border-radius: 8px;
+            border: 2px dashed var(--light-gray);
+        }
+
+        .vivahpro-no-images-placeholder i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: block;
+            opacity: 0.5;
+        }
+
+        .vivahpro-add-image-section {
+            margin-top: 15px;
+        }
+
+        .vivahpro-image-input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .vivahpro-image-url-input {
+            flex: 1;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 2px solid var(--light-gray);
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            background-color: white;
+        }
+
+        .vivahpro-image-url-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.1);
+        }
+
+        .vivahpro-image-action-btn {
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .vivahpro-save-image-btn {
+            background: var(--red-gradient);
+            color: white;
+        }
+
+        .vivahpro-save-image-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 0, 0, 0.2);
+        }
+
+        .vivahpro-add-image-btn {
+            background: var(--accent);
+            color: white;
+        }
+
+        .vivahpro-add-image-btn:hover {
+            background: #228B22;
+            transform: translateY(-2px);
+        }
+
+        .vivahpro-unsave-all-btn {
+            background: var(--accent3);
+            color: white;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .vivahpro-unsave-all-btn:hover {
+            background: #FF4500;
+            transform: translateY(-2px);
+        }
+
+        .vivahpro-pose-details {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .vivahpro-detail-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .vivahpro-detail-row i {
+            color: var(--primary);
+            width: 20px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .vivahpro-detail-label {
+            font-weight: 600;
+            color: var(--dark);
+            min-width: 120px;
+        }
+
+        .vivahpro-select-checkbox {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .vivahpro-select-checkbox:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .vivahpro-select-checkbox.selected {
+            background-color: var(--primary);
+            color: white;
+            animation: pulse 0.5s ease;
+        }
+
+        .vivahpro-select-checkbox.selected::after {
+            content: "";
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+            animation: ripple 1.5s infinite;
+        }
+
+        /* Image Preview Modal */
+        .vivahpro-image-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .vivahpro-image-modal.show {
+            display: flex;
+        }
+
+        .vivahpro-modal-image {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .vivahpro-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .vivahpro-modal-close:hover {
+            color: var(--secondary);
+            transform: rotate(90deg);
+        }
+
+        /* Right Sidebar */
+        .vivahpro-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* AI Section */
+        .vivahpro-ai-section {
+            background-color: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 25px;
+            height: fit-content;
+        }
+
+        .vivahpro-ai-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .vivahpro-ai-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2E8B57 0%, #3CB371 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: white;
+        }
+
+        .vivahpro-ai-content {
+            background-color: rgba(46, 139, 87, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent);
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .vivahpro-ai-suggestion {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed rgba(46, 139, 87, 0.2);
+        }
+
+        .vivahpro-ai-suggestion:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .vivahpro-ai-suggestion h4 {
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .vivahpro-ai-btn {
+            width: 100%;
+            justify-content: center;
+            margin-top: 15px;
+            background: linear-gradient(135deg, #2E8B57 0%, #3CB371 100%);
+            color: white;
+            border: none;
+        }
+
+        .vivahpro-ai-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(46, 139, 87, 0.3);
+        }
+
+        /* Selections Panel */
+        .vivahpro-selections-panel {
+            background-color: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .vivahpro-selections-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .vivahpro-selected-count {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: var(--red-gradient);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            margin-left: 10px;
+        }
+
+        .vivahpro-selections-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 5px;
+        }
+
+        .vivahpro-selection-item {
+            background-color: var(--light);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary);
+            transition: var(--transition);
+            animation: slideIn 0.4s ease-out;
+            position: relative;
+        }
+
+        .vivahpro-selection-item:hover {
+            background-color: #f5efe9;
+        }
+
+        .vivahpro-selection-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .vivahpro-selection-name {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .vivahpro-selection-ceremony {
+            font-size: 0.85rem;
+            color: var(--medium);
+            margin-top: 4px;
+        }
+
+        .vivahpro-remove-selection {
+            color: var(--medium);
+            cursor: pointer;
+            transition: var(--transition);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .vivahpro-remove-selection:hover {
+            color: var(--primary);
+            background-color: rgba(139, 0, 0, 0.1);
+        }
+
+        .vivahpro-selection-details {
+            font-size: 0.9rem;
+            color: var(--dark);
+            margin-top: 10px;
+        }
+
+        .vivahpro-selection-details div {
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .vivahpro-selection-image {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-top: 10px;
+            background-color: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--medium);
+            font-size: 0.8rem;
+        }
+
+        .vivahpro-empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--medium);
+        }
+
+        .vivahpro-empty-state i {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            opacity: 0.3;
+            display: block;
+        }
+
+        /* Stats Panel */
+        .vivahpro-stats-panel {
+            background-color: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 25px;
+        }
+
+        .vivahpro-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .vivahpro-stat-item {
+            background-color: var(--light);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .vivahpro-stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .vivahpro-stat-label {
+            font-size: 0.9rem;
+            color: var(--medium);
+        }
+
+        /* Image Stats */
+        .vivahpro-image-stats {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid var(--light-gray);
+        }
+
+        .vivahpro-image-stats .vivahpro-stat-item {
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.05) 0%, rgba(255, 215, 0, 0.05) 100%);
+        }
+
+        /* Toast Notifications */
+        .vivahpro-toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--red-gradient);
+            color: white;
+            padding: 15px 25px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-hover);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            animation: slideIn 0.3s ease-out;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .vivahpro-toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .vivahpro-toast i {
+            font-size: 1.2rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes ripple {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1600px) {
+            .vivahpro-container {
+                grid-template-columns: 280px 1fr 380px;
+            }
+        }
+
+        @media (max-width: 1400px) {
+            .vivahpro-container {
+                grid-template-columns: 250px 1fr;
+            }
+            
+            .vivahpro-sidebar {
+                grid-column: 1 / -1;
+                flex-direction: row;
+            }
+            
+            .vivahpro-ai-section, .vivahpro-selections-panel, .vivahpro-stats-panel {
+                flex: 1;
+            }
+        }
+
+        @media (max-width: 1100px) {
+            .vivahpro-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .vivahpro-ceremonies-sidebar {
+                position: static;
+            }
+            
+            .vivahpro-ceremonies-list {
+                max-height: none;
+                overflow-y: visible;
+            }
+            
+            .vivahpro-sidebar {
+                flex-direction: column;
+            }
+            
+            .vivahpro-poses-grid {
+                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .vivahpro-header {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+                text-align: center;
+            }
+            
+            .vivahpro-user-controls {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .vivahpro-poses-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .vivahpro-search-box {
+                width: 100%;
+            }
+            
+            .vivahpro-tabs-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .vivahpro-poses-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .vivahpro-stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .vivahpro-ceremony-item {
+                min-height: 75px;
+                padding: 15px;
+            }
+            
+            .vivahpro-ceremony-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+            }
+            
+            .vivahpro-ceremony-info h3 {
+                font-size: 1rem;
+            }
+            
+            .vivahpro-ceremony-info span {
+                font-size: 0.8rem;
+            }
+            
+            .vivahpro-saved-images-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .vivahpro-tabs-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .vivahpro-stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .vivahpro-ceremony-item {
+                min-height: 70px;
+                padding: 12px;
+                gap: 12px;
+            }
+            
+            .vivahpro-ceremony-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+            
+            .vivahpro-ceremony-info h3 {
+                font-size: 0.95rem;
+                line-height: 1.2;
+            }
+            
+            .vivahpro-ceremony-info span {
+                font-size: 0.75rem;
+                line-height: 1.3;
+            }
+            
+            .vivahpro-image-input-group {
+                flex-direction: column;
+            }
+            
+            .vivahpro-image-action-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="vivahpro-container">
+        <!-- Header -->
+        <header class="vivahpro-header">
+            <div class="vivahpro-logo">
+                <div class="vivahpro-logo-icon">
+                    <i class="fas fa-mandala"></i>
+                </div>
+                <div class="vivahpro-logo-text">
+                    <h1>VivahPro Ultimate</h1>
+                    <span>Complete Hindu Wedding Photography Suite</span>
+                </div>
+            </div>
+            <div class="vivahpro-user-controls">
+                <button class="vivahpro-btn vivahpro-btn-secondary" id="vivahpro-reset-btn">
+                    <i class="fas fa-sync-alt"></i> Reset
+                </button>
+                <button class="vivahpro-btn vivahpro-btn-primary" id="vivahpro-export-btn">
+                    <i class="fas fa-file-export"></i> Export
+                </button>
+                <button class="vivahpro-btn vivahpro-btn-secondary" id="vivahpro-print-btn">
+                    <i class="fas fa-print"></i> Print
+                </button>
+                <button class="vivahpro-btn vivahpro-btn-secondary" id="vivahpro-save-images-btn">
+                    <i class="fas fa-save"></i> Save All Images
+                </button>
+                <button class="vivahpro-btn vivahpro-btn-secondary" id="vivahpro-unsave-all-btn">
+                    <i class="fas fa-trash"></i> Unsave All
+                </button>
+            </div>
+        </header>
+
+        <!-- Left Sidebar - Ceremonies -->
+        <aside class="vivahpro-ceremonies-sidebar">
+            <h2 class="vivahpro-section-title"><i class="fas fa-om"></i> 12 Hindu Ceremonies</h2>
+            <div class="vivahpro-ceremonies-list" id="vivahpro-ceremonies-list">
+                <!-- Ceremonies will be dynamically generated -->
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="vivahpro-main-content">
+            <!-- Category Tabs -->
+            <section class="vivahpro-category-section">
+                <h2 class="vivahpro-section-title"><i class="fas fa-layer-group"></i> Photography Categories</h2>
+                <div class="vivahpro-tabs-container" id="vivahpro-category-tabs">
+                    <!-- Categories will be dynamically generated -->
+                </div>
+            </section>
+
+            <!-- Poses Grid -->
+            <section class="vivahpro-poses-section">
+                <div class="vivahpro-poses-header">
+                    <h2 class="vivahpro-section-title"><i class="fas fa-camera-retro"></i> Shot Library</h2>
+                    <div class="vivahpro-poses-controls">
+                        <div class="vivahpro-search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="vivahpro-pose-search" placeholder="Search poses, settings, or equipment...">
+                        </div>
+                        <div class="vivahpro-pagination">
+                            <button class="vivahpro-page-btn" id="vivahpro-prev-page">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <span class="vivahpro-page-info">Page <span id="vivahpro-current-page">1</span> of <span id="vivahpro-total-pages">1</span></span>
+                            <button class="vivahpro-page-btn" id="vivahpro-next-page">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="vivahpro-poses-grid" id="vivahpro-poses-container">
+                    <!-- Poses will be dynamically generated -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside class="vivahpro-sidebar">
+            <!-- AI Assistant Section -->
+            <section class="vivahpro-ai-section">
+                <div class="vivahpro-ai-header">
+                    <div class="vivahpro-ai-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div>
+                        <h2 class="vivahpro-section-title">AI Assistant</h2>
+                        <p>Smart photography recommendations</p>
+                    </div>
+                </div>
+                <div class="vivahpro-ai-content" id="vivahpro-ai-suggestions">
+                    <div class="vivahpro-ai-suggestion">
+                        <h4><i class="fas fa-lightbulb"></i> Pro Tip</h4>
+                        <p>For Jaimala ceremony, capture wide shots of the mandap and close-ups of the garland exchange.</p>
+                    </div>
+                </div>
+                <button class="vivahpro-btn vivahpro-ai-btn" id="vivahpro-ai-generate-btn">
+                    <i class="fas fa-magic"></i> Generate AI Tips
+                </button>
+            </section>
+
+            <!-- Selections Panel -->
+            <section class="vivahpro-selections-panel">
+                <div class="vivahpro-selections-header">
+                    <h2 class="vivahpro-section-title">Selected Shots 
+                        <span class="vivahpro-selected-count" id="vivahpro-selected-count">0</span>
+                    </h2>
+                </div>
+                <div class="vivahpro-selections-list" id="vivahpro-selections-list">
+                    <div class="vivahpro-empty-state" id="vivahpro-empty-state">
+                        <i class="fas fa-clipboard-list"></i>
+                        <h3>No shots selected</h3>
+                        <p>Select poses to build your shot list</p>
+                    </div>
+                </div>
+                <div class="vivahpro-selections-footer" style="margin-top: 20px;">
+                    <button class="vivahpro-btn vivahpro-btn-primary" id="vivahpro-save-plan-btn" style="width: 100%; margin-bottom: 10px;">
+                        <i class="fas fa-save"></i> Save Shot Plan
+                    </button>
+                    <button class="vivahpro-btn vivahpro-btn-secondary" id="vivahpro-clear-selections-btn" style="width: 100%;">
+                        <i class="fas fa-trash-alt"></i> Clear All
+                    </button>
+                </div>
+            </section>
+
+            <!-- Statistics Panel -->
+            <section class="vivahpro-stats-panel">
+                <h2 class="vivahpro-section-title"><i class="fas fa-chart-bar"></i> Statistics</h2>
+                <div class="vivahpro-stats-grid">
+                    <div class="vivahpro-stat-item">
+                        <div class="vivahpro-stat-value" id="vivahpro-total-poses">6000</div>
+                        <div class="vivahpro-stat-label">Total Poses</div>
+                    </div>
+                    <div class="vivahpro-stat-item">
+                        <div class="vivahpro-stat-value" id="vivahpro-selected-poses">0</div>
+                        <div class="vivahpro-stat-label">Selected</div>
+                    </div>
+                    <div class="vivahpro-stat-item">
+                        <div class="vivahpro-stat-value" id="vivahpro-ceremonies-count">12</div>
+                        <div class="vivahpro-stat-label">Ceremonies</div>
+                    </div>
+                    <div class="vivahpro-stat-item">
+                        <div class="vivahpro-stat-value" id="vivahpro-categories-count">5</div>
+                        <div class="vivahpro-stat-label">Categories</div>
+                    </div>
+                    <div class="vivahpro-stat-item">
+                        <div class="vivahpro-stat-value" id="vivahpro-poses-per-category">100</div>
+                        <div class="vivahpro-stat-label">Poses per Category</div>
+                    </div>
+                    <div class="vivahpro-stat-item">
+                        <div class="vivahpro-stat-value" id="vivahpro-total-combinations">60</div>
+                        <div class="vivahpro-stat-label">Combinations</div>
+                    </div>
+                </div>
+                
+                <!-- Image Statistics -->
+                <div class="vivahpro-image-stats">
+                    <h3 class="vivahpro-section-title" style="font-size: 1.4rem;"><i class="fas fa-images"></i> Image Stats</h3>
+                    <div class="vivahpro-stats-grid">
+                        <div class="vivahpro-stat-item">
+                            <div class="vivahpro-stat-value" id="vivahpro-total-images">0</div>
+                            <div class="vivahpro-stat-label">Total Images</div>
+                        </div>
+                        <div class="vivahpro-stat-item">
+                            <div class="vivahpro-stat-value" id="vivahpro-poses-with-images">0</div>
+                            <div class="vivahpro-stat-label">Poses with Images</div>
+                        </div>
+                        <div class="vivahpro-stat-item">
+                            <div class="vivahpro-stat-value" id="vivahpro-images-per-pose">0.0</div>
+                            <div class="vivahpro-stat-label">Avg per Pose</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </aside>
+    </div>
+
+    <!-- Image Preview Modal -->
+    <div class="vivahpro-image-modal" id="vivahpro-image-modal">
+        <div class="vivahpro-modal-close" id="vivahpro-modal-close">
+            <i class="fas fa-times"></i>
+        </div>
+        <img src="" alt="" class="vivahpro-modal-image" id="vivahpro-modal-image">
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="vivahpro-toast" id="vivahpro-save-toast">
+        <i class="fas fa-check-circle"></i>
+        <span>Image URLs saved successfully!</span>
+    </div>
+
+    <script>
+        // Complete Hindu Wedding Photography Data with 12 Ceremonies
+        const vivahproData = {
+            ceremonies: [
+                { id: 1, name: "Pre-Wedding Shoot", icon: "fas fa-camera", desc: "Pre-wedding photoshoot at scenic locations", type: "pre", special: false },
+                { id: 2, name: "Engagement (Sagai)", icon: "fas fa-ring", desc: "Ring exchange and formal agreement", type: "pre", special: false },
+                { id: 3, name: "Mehendi", icon: "fas fa-paint-brush", desc: "Henna application ceremony", type: "pre", special: false },
+                { id: 4, name: "Sangeet", icon: "fas fa-music", desc: "Musical night and performances", type: "pre", special: false },
+                { id: 5, name: "Haldi", icon: "fas fa-spa", desc: "Turmeric paste application", type: "pre", special: false },
+                { id: 6, name: "Jaimala", icon: "fas fa-flower", desc: "Garland exchange ceremony", type: "main", special: true },
+                { id: 7, name: "Bride Prep", icon: "fas fa-female", desc: "Bride's preparation and dressing", type: "main", special: false },
+                { id: 8, name: "Groom Prep", icon: "fas fa-male", desc: "Groom's preparation and dressing", type: "main", special: false },
+                { id: 9, name: "Milni", icon: "fas fa-hands-helping", desc: "Family introductions and greetings", type: "main", special: true },
+                { id: 10, name: "Wedding (Vivaah)", icon: "fas fa-heart", desc: "Main wedding ceremony", type: "main", special: false },
+                { id: 11, name: "Reception", icon: "fas fa-glass-cheers", desc: "Post-wedding celebration", type: "post", special: false },
+                { id: 12, name: "Vidaai", icon: "fas fa-car", desc: "Bride's farewell ceremony", type: "post", special: false }
+            ],
+            categories: [
+                { id: 1, name: "Photography", icon: "fas fa-camera", desc: "Still photography shots" },
+                { id: 2, name: "Videography", icon: "fas fa-video", desc: "Video recording shots" },
+                { id: 3, name: "Cinematography", icon: "fas fa-film", desc: "Cinematic footage" },
+                { id: 4, name: "Candid Photography", icon: "fas fa-camera-retro", desc: "Unposed moments" },
+                { id: 5, name: "Traditional Photography", icon: "fas fa-landmark", desc: "Traditional posed shots" }
+            ],
+            poses: [],
+            selectedPoses: [],
+            currentCeremony: 6, // Default to Jaimala
+            currentCategory: 1,
+            currentPage: 1,
+            pageSize: 12,
+            aiSuggestions: []
+        };
+
+        // STORAGE KEYS for LocalStorage
+        const VIVAHPRO_STORAGE_KEYS = {
+            IMAGE_URLS: 'vivahpro_image_urls',
+            SELECTED_POSES: 'vivahpro_selected_poses',
+            SHOT_PLAN: 'vivahpro_shot_plan',
+            ALL_POSES: 'vivahpro_all_poses'
+        };
+
+        // Deterministic random number generator
+        function vivahproSeededRandom(seed) {
+            return function() {
+                seed = (seed * 9301 + 49297) % 233280;
+                return seed / 233280;
+            };
+        }
+
+        // Load saved image URLs from LocalStorage - NOW SUPPORTS MULTIPLE IMAGES
+        function vivahproLoadSavedImageUrls() {
+            try {
+                const saved = localStorage.getItem(VIVAHPRO_STORAGE_KEYS.IMAGE_URLS);
+                if (saved) {
+                    const parsed = JSON.parse(saved);
+                    // Convert old single image format to array format
+                    const converted = {};
+                    Object.entries(parsed).forEach(([poseId, imageData]) => {
+                        if (Array.isArray(imageData)) {
+                            converted[poseId] = imageData;
+                        } else {
+                            // Convert old single image to array
+                            converted[poseId] = imageData ? [imageData] : [];
+                        }
+                    });
+                    return converted;
+                }
+            } catch (e) {
+                console.error('Error loading saved image URLs:', e);
+            }
+            return {};
+        }
+
+        // Save image URLs to LocalStorage
+        function vivahproSaveImageUrls() {
+            try {
+                const imageUrls = {};
+                let totalImages = 0;
+                let posesWithImages = 0;
+                
+                vivahproData.poses.forEach(pose => {
+                    if (pose.imageUrls && pose.imageUrls.length > 0) {
+                        imageUrls[pose.id] = pose.imageUrls;
+                        totalImages += pose.imageUrls.length;
+                        posesWithImages++;
+                    }
+                });
+                
+                localStorage.setItem(VIVAHPRO_STORAGE_KEYS.IMAGE_URLS, JSON.stringify(imageUrls));
+                
+                // Update image statistics
+                document.getElementById('vivahpro-total-images').textContent = totalImages;
+                document.getElementById('vivahpro-poses-with-images').textContent = posesWithImages;
+                document.getElementById('vivahpro-images-per-pose').textContent = 
+                    posesWithImages > 0 ? (totalImages / posesWithImages).toFixed(1) : '0.0';
+                
+                vivahproShowToast(`${totalImages} image(s) saved successfully!`);
+                return true;
+            } catch (e) {
+                console.error('Error saving image URLs:', e);
+                vivahproShowToast('Error saving image URLs!', true);
+                return false;
+            }
+        }
+
+        // Unsave all images for a specific pose
+        function vivahproUnsaveAllImages(poseId) {
+            const pose = vivahproData.poses.find(p => p.id === poseId);
+            if (pose) {
+                if (pose.imageUrls && pose.imageUrls.length > 0) {
+                    pose.imageUrls = [];
+                    vivahproSaveImageUrls();
+                    vivahproShowToast(`All images removed from ${pose.name}`);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        // Unsave all images globally
+        function vivahproUnsaveAllImagesGlobally() {
+            if (confirm('Are you sure you want to remove ALL saved images? This action cannot be undone.')) {
+                vivahproData.poses.forEach(pose => {
+                    pose.imageUrls = [];
+                });
+                
+                localStorage.removeItem(VIVAHPRO_STORAGE_KEYS.IMAGE_URLS);
+                
+                // Update image statistics
+                document.getElementById('vivahpro-total-images').textContent = 0;
+                document.getElementById('vivahpro-poses-with-images').textContent = 0;
+                document.getElementById('vivahpro-images-per-pose').textContent = '0.0';
+                
+                // Re-render poses to reflect changes
+                vivahproRenderPoses();
+                vivahproShowToast('All images have been removed!', false);
+                return true;
+            }
+            return false;
+        }
+
+        // Load all poses from LocalStorage (if they exist)
+        function vivahproLoadAllPoses() {
+            try {
+                const saved = localStorage.getItem(VIVAHPRO_STORAGE_KEYS.ALL_POSES);
+                if (saved) {
+                    return JSON.parse(saved);
+                }
+            } catch (e) {
+                console.error('Error loading saved poses:', e);
+            }
+            return null;
+        }
+
+        // Save all poses to LocalStorage
+        function vivahproSaveAllPoses() {
+            try {
+                localStorage.setItem(VIVAHPRO_STORAGE_KEYS.ALL_POSES, JSON.stringify(vivahproData.poses));
+                return true;
+            } catch (e) {
+                console.error('Error saving all poses:', e);
+                return false;
+            }
+        }
+
+        // Load selected poses from LocalStorage
+        function vivahproLoadSelectedPoses() {
+            try {
+                const saved = localStorage.getItem(VIVAHPRO_STORAGE_KEYS.SELECTED_POSES);
+                return saved ? JSON.parse(saved) : [];
+            } catch (e) {
+                console.error('Error loading selected poses:', e);
+                return [];
+            }
+        }
+
+        // Save selected poses to LocalStorage
+        function vivahproSaveSelectedPoses() {
+            try {
+                localStorage.setItem(VIVAHPRO_STORAGE_KEYS.SELECTED_POSES, JSON.stringify(vivahproData.selectedPoses));
+            } catch (e) {
+                console.error('Error saving selected poses:', e);
+            }
+        }
+
+        // Show toast notification
+        function vivahproShowToast(message, isError = false) {
+            const toast = document.getElementById('vivahpro-save-toast');
+            toast.innerHTML = `<i class="fas ${isError ? 'fa-exclamation-circle' : 'fa-check-circle'}"></i><span>${message}</span>`;
+            
+            if (isError) {
+                toast.style.background = 'linear-gradient(135deg, #FF6347 0%, #FFA500 100%)';
+            } else {
+                toast.style.background = 'linear-gradient(135deg, #2E8B57 0%, #3CB371 100%)';
+            }
+            
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Generate 100 poses for each ceremony-category combination - DETERMINISTIC VERSION
+        function vivahproGeneratePoses() {
+            // First, try to load poses from storage
+            const savedPoses = vivahproLoadAllPoses();
+            if (savedPoses && savedPoses.length > 0) {
+                console.log(`Loaded ${savedPoses.length} poses from storage`);
+                vivahproData.poses = savedPoses;
+                // Load saved images for each pose
+                const savedImageUrls = vivahproLoadSavedImageUrls();
+                vivahproData.poses.forEach(pose => {
+                    if (savedImageUrls[pose.id]) {
+                        pose.imageUrls = savedImageUrls[pose.id];
+                    } else {
+                        pose.imageUrls = [];
+                    }
+                });
+                return;
+            }
+            
+            console.log('Generating new deterministic poses...');
+            
+            const ceremonyNames = [
+                "Pre-Wedding", "Engagement", "Mehendi", "Sangeet", "Haldi", "Jaimala", 
+                "Bride Prep", "Groom Prep", "Milni", "Wedding", "Reception", "Vidaai"
+            ];
+            
+            const poseTemplates = {
+                1: [
+                    "Bride's {detail} Detail Shot", "Groom's {detail} Close-up", "{ceremony} Wide Angle", 
+                    "{ceremony} Portrait", "{detail} Macro Shot", "Family Group Photo", "Couple Portrait", 
+                    "Ritual Action Shot", "Emotional Moment", "Traditional Pose", "Creative Angle", 
+                    "Silhouette Shot", "Reflection Shot", "Overhead Shot", "Low Angle Shot",
+                    "Candid Laughter", "Tears of Joy", "Whispered Moment", "Embrace", "First Look",
+                    "Ring Close-up", "Hands Together", "Feet with Alta", "Jewelry Detail", "Makeup Application",
+                    "Dressing Moment", "Prayer Hands", "Blessing Moment", "Ritual Fire", "Sacred Thread",
+                    "Garland Exchange", "Sindoor Application", "Mangalsutra Tying", "Saptapadi Steps", "Kanyadaan",
+                    "Varmala Moment", "Phere Around Fire", "Priest Guidance", "Holy Fire", "Offerings",
+                    "Traditional Attire", "Modern Outfit", "Bridal Gown", "Groom's Sherwani", "Accessories",
+                    "Mandap Decor", "Flower Arrangements", "Lighting Setup", "Venue Overview", "Detail Shots",
+                    "Preparation Shots", "Getting Ready", "Final Touches", "Last Minute Adjustments", "Nervous Moments",
+                    "Excitement Shots", "Anticipation", "Arrival Shots", "Entrance", "Grand Entry",
+                    "Welcome Gestures", "Greetings", "Namaste Pose", "Feet Washing", "Aarti",
+                    "Tilak Ceremony", "Garland Making", "Henna Application", "Turmeric Paste", "Oil Application",
+                    "Music Performance", "Dance Moves", "Instrument Playing", "Singing Moments", "Celebration",
+                    "Food Preparation", "Sweets Display", "Traditional Dishes", "Feasting", "Toasts",
+                    "Speeches", "Blessings", "Advice Sharing", "Emotional Speeches", "Thank You",
+                    "Cake Cutting", "First Dance", "Dance Floor", "Group Dancing", "Celebration",
+                    "Departure", "Goodbyes", "Rice Throwing", "Car Decor", "Final Wave",
+                    "Tearful Farewell", "Hugs", "Last Glance", "Vehicle Departure", "Family Left Behind"
+                ],
+                2: [
+                    "{ceremony} Documentary Shot", "{detail} Video Close-up", "Slow Motion {action}", 
+                    "Time-lapse of {setting}", "Interview with {person}", "B-roll of {detail}",
+                    "Establishing Shot of {location}", "Action Sequence of {ritual}", "Emotional Reaction",
+                    "Ceremony Progression", "Ritual Steps", "Traditional Actions", "Modern Touches",
+                    "Family Interactions", "Guest Reactions", "Cultural Elements", "Religious Aspects",
+                    "Preparation Process", "Getting Ready Sequence", "Final Moments Before", "Transition Shots",
+                    "Arrival Sequence", "Entrance Video", "Grand Introduction", "Welcome Sequence",
+                    "Ceremony Highlights", "Key Moments", "Important Rituals", "Sacred Actions",
+                    "Celebration Scenes", "Dance Sequences", "Music Performances", "Entertainment",
+                    "Food Preparation Video", "Feasting Moments", "Toast Videos", "Speech Recordings",
+                    "Farewell Sequence", "Departure Video", "Final Goodbyes", "Ending Moments",
+                    "Drone Footage of {location}", "Gimbal Movement through {scene}", "Slider Shot of {subject}",
+                    "Underwater Shot of {action}", "Aerial View of {ceremony}", "360 Degree {shot}",
+                    "Split Screen {comparison}", "Picture in Picture {view}", "Multi-camera {coverage}",
+                    "Slow Zoom on {subject}", "Panning Shot of {scene}", "Tilting Shot of {subject}",
+                    "Tracking Shot of {movement}", "Dolly Shot towards {subject}", "Crane Shot over {scene}"
+                ],
+                3: [
+                    "Cinematic {ceremony} Opening", "Drone Shot of {location}", "Slider Shot of {subject}",
+                    "Gimbal Movement through {scene}", "Slow Motion Cinematic {action}", "Creative {detail} Shot",
+                    "Dramatic Lighting on {subject}", "Shadow Play during {ritual}", "Reflection in {surface}",
+                    "Through Object Shot", "Rack Focus on {subject}", "Dutch Angle of {scene}",
+                    "Low Angle Cinematic", "High Angle Dramatic", "Wide Cinematic", "Close Cinematic",
+                    "Emotional Cinematic", "Action Cinematic", "Ritual Cinematic", "Tradition Cinematic",
+                    "Modern Cinematic", "Urban Cinematic", "Traditional Cinematic", "Cultural Cinematic",
+                    "Storytelling Sequence", "Narrative Arc", "Character Introduction", "Scene Setting",
+                    "Mood Establishment", "Atmosphere Creation", "Tension Building", "Release Moment",
+                    "Climax Shot", "Resolution Shot", "Ending Shot", "Closing Cinematic",
+                    "Golden Hour {shot}", "Blue Hour {scene}", "Night {shot}", "Rain {shot}",
+                    "Foggy {scene}", "Backlit {subject}", "Silhouette against {background}",
+                    "Light Painting during {action}", "Bokeh {shot}", "Lens Flare {shot}",
+                    "Anamorphic {shot}", "Black and White {scene}", "Sepia Tone {shot}",
+                    "Vintage Film {look}", "Color Graded {scene}", "HDR {shot}"
+                ],
+                4: [
+                    "Candid {emotion} Moment", "Unposed {action} Shot", "Natural {interaction}",
+                    "Spontaneous {reaction}", "Genuine {expression}", "Real {moment}",
+                    "Behind the Scenes {activity}", "Unexpected {occurrence}", "Surprise {moment}",
+                    "Laughter Burst", "Tearful Moment", "Thoughtful Glance", "Worried Look",
+                    "Excited Jump", "Nervous Fidget", "Calm Before", "Chaotic Moment",
+                    "Quiet Reflection", "Loud Celebration", "Subtle Gesture", "Obvious Reaction",
+                    "Hidden Smile", "Open Laughter", "Secret Whisper", "Public Declaration",
+                    "Private Moment", "Shared Joy", "Individual Contemplation", "Group Dynamics",
+                    "Family Bonding", "Friend Support", "Guest Enjoyment", "Participant Focus",
+                    "Observer Watching", "Performer Immersed", "Helper Assisting", "Guide Directing",
+                    "Child's {reaction}", "Elder's {emotion}", "Youth's {energy}", "Couple's {intimacy}",
+                    "Parent's {pride}", "Sibling's {support}", "Friend's {joy}", "Relative's {blessing}",
+                    "Priest's {focus}", "Musician's {passion}", "Dancer's {grace}", "Chef's {skill}"
+                ],
+                5: [
+                    "Traditional {ceremony} Pose", "Classic {ritual} Shot", "Conventional {action}",
+                    "Customary {gesture}", "Ritualistic {position}", "Ceremonial {pose}",
+                    "Formal {arrangement}", "Structured {composition}", "Organized {grouping}",
+                    "Symmetrical {setup}", "Balanced {frame}", "Centered {subject}",
+                    "Rule of Thirds {shot}", "Leading Lines {composition}", "Framing within {element}",
+                    "Pattern {repetition}", "Texture {emphasis}", "Color {harmony}",
+                    "Traditional Family Pose", "Couple Traditional", "Individual Traditional",
+                    "Group Traditional", "Generational Pose", "Ancestral Style",
+                    "Cultural Heritage Pose", "Ethnic Tradition", "Regional Custom",
+                    "Religious Ritual Pose", "Sacred Tradition", "Holy Ceremony",
+                    "Historical Recreation", "Ancestral Memory", "Traditional Legacy",
+                    "Vedic {pose}", "Puranic {scene}", "Mythological {recreation}",
+                    "Temple {style}", "Classical {composition}", "Heritage {shot}",
+                    "Raja Ravi Varma {style}", "Miniature Painting {composition}", "Fresco {style}",
+                    "Sculptural {pose}", "Architectural {framing}", "Iconic {shot}"
+                ]
+            };
+            
+            const details = ["Ring", "Necklace", "Bracelet", "Earrings", "Hairstyle", "Makeup", "Mehendi", "Turmeric", "Flower", "Garland", "Sindoor", "Mangalsutra", "Attire", "Saree", "Lehenga", "Sherwani", "Jewelry", "Bangles", "Anklets", "Nose Ring", "Tikka", "Payal", "Kamarbandh", "Haathphool"];
+            const actions = ["Exchange", "Application", "Ceremony", "Ritual", "Dance", "Singing", "Prayer", "Blessing", "Greeting", "Farewell", "Celebration", "Procession", "Entrance", "Departure", "Washing", "Anointing", "Tying", "Fastening", "Offering", "Receiving"];
+            const emotions = ["Joy", "Happiness", "Excitement", "Nervousness", "Anticipation", "Love", "Affection", "Pride", "Nostalgia", "Sadness", "Tears", "Laughter", "Surprise", "Shock", "Relief", "Contentment"];
+            const settings = ["Mandap", "Venue", "Stage", "Home", "Temple", "Garden", "Hall", "Outdoor", "Indoor", "Decorated Area", "Riverbank", "Mountains", "Beach", "Forest", "Palace", "Farmhouse"];
+            const persons = ["Bride", "Groom", "Mother", "Father", "Sister", "Brother", "Grandparent", "Priest", "Friend", "Relative", "Maternal Uncle", "Paternal Aunt", "Best Man", "Maid of Honor", "Ring Bearer", "Flower Girl"];
+            const interactions = ["Conversation", "Interaction", "Meeting", "Greeting", "Farewell", "Hug", "Handshake", "Embrace", "Blessing", "Advice", "Joking", "Consoling", "Celebrating", "Dancing Together"];
+            
+            // Load saved image URLs
+            const savedImageUrls = vivahproLoadSavedImageUrls();
+            
+            let poseId = 1;
+            
+            // Generate 100 poses for each ceremony-category combination
+            for (let ceremonyId = 1; ceremonyId <= 12; ceremonyId++) {
+                const ceremonyName = ceremonyNames[ceremonyId - 1];
+                
+                for (let categoryId = 1; categoryId <= 5; categoryId++) {
+                    const templateCategory = poseTemplates[categoryId];
+                    
+                    for (let i = 0; i < 100; i++) {
+                        // Create a deterministic seed based on ceremonyId, categoryId, and pose index
+                        const seed = ceremonyId * 10000 + categoryId * 100 + i;
+                        const deterministicRandom = vivahproSeededRandom(seed);
+                        
+                        // Use deterministic selection instead of Math.random()
+                        const templateIndex = Math.floor(deterministicRandom() * templateCategory.length);
+                        const template = templateCategory[templateIndex];
+                        
+                        // Deterministic replacements
+                        const detailIndex = Math.floor(deterministicRandom() * details.length);
+                        const actionIndex = Math.floor(deterministicRandom() * actions.length);
+                        const emotionIndex = Math.floor(deterministicRandom() * emotions.length);
+                        const settingIndex = Math.floor(deterministicRandom() * settings.length);
+                        const personIndex = Math.floor(deterministicRandom() * persons.length);
+                        const interactionIndex = Math.floor(deterministicRandom() * interactions.length);
+                        const shotIndex = Math.floor(deterministicRandom() * 5);
+                        const sceneIndex = Math.floor(deterministicRandom() * 5);
+                        const lookIndex = Math.floor(deterministicRandom() * 5);
+                        const compositionIndex = Math.floor(deterministicRandom() * 5);
+                        const momentIndex = Math.floor(deterministicRandom() * 5);
+                        
+                        const shotTypes = ["Shot", "Scene", "View", "Angle", "Perspective"];
+                        const sceneTypes = ["Scene", "Setting", "Environment", "Location", "Venue"];
+                        const lookTypes = ["Look", "Style", "Effect", "Treatment", "Grade"];
+                        const compositionTypes = ["Composition", "Arrangement", "Layout", "Setup", "Framing"];
+                        const momentTypes = ["Moment", "Instant", "Second", "Minute", "Time"];
+                        
+                        let poseName = template
+                            .replace("{ceremony}", ceremonyName)
+                            .replace("{detail}", details[detailIndex])
+                            .replace("{action}", actions[actionIndex])
+                            .replace("{emotion}", emotions[emotionIndex])
+                            .replace("{setting}", settings[settingIndex])
+                            .replace("{person}", persons[personIndex])
+                            .replace("{interaction}", interactions[interactionIndex])
+                            .replace("{shot}", shotTypes[shotIndex])
+                            .replace("{scene}", sceneTypes[sceneIndex])
+                            .replace("{look}", lookTypes[lookIndex])
+                            .replace("{composition}", compositionTypes[compositionIndex])
+                            .replace("{moment}", momentTypes[momentIndex]);
+                        
+                        poseName = `${poseName} ${i+1}`;
+                        
+                        const styles = ["Traditional", "Candid", "Portrait", "Detail", "Wide", "Close-up", "Creative", "Documentary", "Emotional", "Ceremonial", "Modern", "Classic", "Artistic", "Journalistic", "Fine Art"];
+                        const cameraSettings = [
+                            "f/1.8, 1/500s, ISO 400", "f/2.8, 1/250s, ISO 800", "f/4, 1/125s, ISO 1600", 
+                            "f/5.6, 1/60s, ISO 3200", "f/8, 1/200s, ISO 200", "f/2.0, 1/1000s, ISO 100",
+                            "f/1.4, 1/2000s, ISO 200", "f/2.2, 1/800s, ISO 400", "f/3.5, 1/400s, ISO 800",
+                            "f/6.3, 1/160s, ISO 1600", "f/11, 1/30s, ISO 6400", "f/16, 1/15s, ISO 100"
+                        ];
+                        const lenses = [
+                            "35mm f/1.4", "50mm f/1.8", "85mm f/1.8", "24-70mm f/2.8", "70-200mm f/2.8", 
+                            "100mm Macro f/2.8", "24mm f/1.4", "135mm f/2.0", "16-35mm f/2.8", "200mm f/2.8",
+                            "400mm f/2.8", "14mm f/2.8", "20mm f/1.8", "105mm f/1.4", "600mm f/4.0"
+                        ];
+                        const equipment = [
+                            "Tripod", "External Flash", "Reflector", "Diffuser", "Drone", "Gimbal", 
+                            "Slider", "Wireless Mic", "LED Light", "Softbox", "Light Stand", "Remote Trigger",
+                            "Polarizing Filter", "ND Filter", "Battery Grip", "Monitor", "Follow Focus",
+                            "Steadicam", "Jib", "Crane", "Dolly", "Underwater Housing", "Time-lapse Controller",
+                            "Wireless Transmitter", "Field Monitor", "Matte Box", "Shoulder Rig", "Cage"
+                        ];
+                        
+                        const styleIndex = Math.floor(deterministicRandom() * styles.length);
+                        const settingIndex2 = Math.floor(deterministicRandom() * cameraSettings.length);
+                        const lensIndex = Math.floor(deterministicRandom() * lenses.length);
+                        
+                        const style = styles[styleIndex];
+                        const setting = cameraSettings[settingIndex2];
+                        const lens = lenses[lensIndex];
+                        
+                        const equipmentCount = Math.floor(deterministicRandom() * 3) + 1;
+                        const selectedEquipment = [];
+                        
+                        // Deterministic equipment selection
+                        for (let j = 0; j < equipmentCount; j++) {
+                            const equipmentIndex = Math.floor(deterministicRandom() * equipment.length);
+                            const item = equipment[equipmentIndex];
+                            if (!selectedEquipment.includes(item)) {
+                                selectedEquipment.push(item);
+                            }
+                        }
+                        const equip = selectedEquipment.join(", ");
+                        
+                        // Get saved image URLs for this pose if they exist
+                        const savedUrls = savedImageUrls[poseId] || [];
+                        
+                        vivahproData.poses.push({
+                            id: poseId,
+                            ceremonyId: ceremonyId,
+                            categoryId: categoryId,
+                            name: poseName,
+                            style: style,
+                            cameraSettings: setting,
+                            lens: lens,
+                            equipment: equip,
+                            imageUrls: savedUrls, // Array of image URLs
+                            selected: false
+                        });
+                        
+                        poseId++;
+                    }
+                }
+            }
+            
+            console.log(`Generated ${vivahproData.poses.length} deterministic poses`);
+            console.log(`Loaded ${Object.keys(savedImageUrls).length} saved image sets`);
+            
+            // Save the generated poses to localStorage
+            vivahproSaveAllPoses();
+            
+            // Update image statistics
+            vivahproUpdateImageStats();
+        }
+
+        // Update image statistics
+        function vivahproUpdateImageStats() {
+            let totalImages = 0;
+            let posesWithImages = 0;
+            
+            vivahproData.poses.forEach(pose => {
+                if (pose.imageUrls && pose.imageUrls.length > 0) {
+                    totalImages += pose.imageUrls.length;
+                    posesWithImages++;
+                }
+            });
+            
+            document.getElementById('vivahpro-total-images').textContent = totalImages;
+            document.getElementById('vivahpro-poses-with-images').textContent = posesWithImages;
+            document.getElementById('vivahpro-images-per-pose').textContent = 
+                posesWithImages > 0 ? (totalImages / posesWithImages).toFixed(1) : '0.0';
+        }
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            vivahproGeneratePoses();
+            
+            // Load selected poses from storage
+            vivahproData.selectedPoses = vivahproLoadSelectedPoses();
+            
+            // Update poses selection status
+            vivahproData.selectedPoses.forEach(poseId => {
+                const pose = vivahproData.poses.find(p => p.id === poseId);
+                if (pose) {
+                    pose.selected = true;
+                }
+            });
+            
+            vivahproRenderCeremonies();
+            vivahproRenderCategories();
+            vivahproRenderPoses();
+            vivahproRenderSelectedPoses();
+            vivahproUpdateStats();
+            
+            // Set initial active states
+            document.querySelector(`.vivahpro-ceremony-item[data-id="6"]`).classList.add('active');
+            document.querySelector(`.vivahpro-category-tab[data-id="1"]`).classList.add('active');
+            
+            // Add event listeners
+            document.getElementById('vivahpro-pose-search').addEventListener('input', vivahproFilterPoses);
+            document.getElementById('vivahpro-save-plan-btn').addEventListener('click', vivahproSavePlan);
+            document.getElementById('vivahpro-clear-selections-btn').addEventListener('click', vivahproClearAllSelections);
+            document.getElementById('vivahpro-reset-btn').addEventListener('click', vivahproResetAll);
+            document.getElementById('vivahpro-export-btn').addEventListener('click', vivahproExportPlan);
+            document.getElementById('vivahpro-print-btn').addEventListener('click', vivahproPrintSummary);
+            document.getElementById('vivahpro-save-images-btn').addEventListener('click', () => vivahproSaveImageUrls());
+            document.getElementById('vivahpro-unsave-all-btn').addEventListener('click', vivahproUnsaveAllImagesGlobally);
+            document.getElementById('vivahpro-ai-generate-btn').addEventListener('click', vivahproGenerateAISuggestions);
+            document.getElementById('vivahpro-prev-page').addEventListener('click', vivahproPreviousPage);
+            document.getElementById('vivahpro-next-page').addEventListener('click', vivahproNextPage);
+            
+            // Image modal close event
+            document.getElementById('vivahpro-modal-close').addEventListener('click', () => {
+                document.getElementById('vivahpro-image-modal').classList.remove('show');
+            });
+            
+            // Close modal when clicking outside image
+            document.getElementById('vivahpro-image-modal').addEventListener('click', (e) => {
+                if (e.target.id === 'vivahpro-image-modal') {
+                    document.getElementById('vivahpro-image-modal').classList.remove('show');
+                }
+            });
+            
+            vivahproGenerateAISuggestions();
+            
+            // Show welcome message
+            setTimeout(() => {
+                const savedImageUrls = vivahproLoadSavedImageUrls();
+                let totalSavedImages = 0;
+                Object.values(savedImageUrls).forEach(urls => {
+                    totalSavedImages += urls.length;
+                });
+                if (totalSavedImages > 0) {
+                    vivahproShowToast(`Loaded ${totalSavedImages} saved images from previous session!`);
+                }
+            }, 1000);
+        });
+
+        // Render ceremony list
+        function vivahproRenderCeremonies() {
+            const container = document.getElementById('vivahpro-ceremonies-list');
+            container.innerHTML = '';
+            
+            vivahproData.ceremonies.forEach(ceremony => {
+                const item = document.createElement('div');
+                item.className = `vivahpro-ceremony-item ${ceremony.id === 6 ? 'jaimala' : ceremony.id === 9 ? 'milni' : ''}`;
+                item.setAttribute('data-id', ceremony.id);
+                item.innerHTML = `
+                    <div class="vivahpro-ceremony-icon">
+                        <i class="${ceremony.icon}"></i>
+                    </div>
+                    <div class="vivahpro-ceremony-info">
+                        <h3>${ceremony.name}</h3>
+                        <span>${ceremony.desc}</span>
+                    </div>
+                `;
+                
+                item.addEventListener('click', () => {
+                    document.querySelectorAll('.vivahpro-ceremony-item').forEach(c => c.classList.remove('active'));
+                    item.classList.add('active');
+                    vivahproData.currentCeremony = ceremony.id;
+                    vivahproData.currentPage = 1;
+                    vivahproRenderPoses();
+                    vivahproGenerateAISuggestions();
+                });
+                
+                container.appendChild(item);
+            });
+        }
+
+        // Render category tabs
+        function vivahproRenderCategories() {
+            const container = document.getElementById('vivahpro-category-tabs');
+            container.innerHTML = '';
+            
+            vivahproData.categories.forEach(category => {
+                const tab = document.createElement('div');
+                tab.className = 'vivahpro-category-tab';
+                tab.setAttribute('data-id', category.id);
+                tab.innerHTML = `
+                    <div class="vivahpro-category-icon">
+                        <i class="${category.icon}"></i>
+                    </div>
+                    <h3>${category.name}</h3>
+                    <span>${category.desc}</span>
+                `;
+                
+                tab.addEventListener('click', () => {
+                    document.querySelectorAll('.vivahpro-category-tab').forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    vivahproData.currentCategory = category.id;
+                    vivahproData.currentPage = 1;
+                    vivahproRenderPoses();
+                });
+                
+                container.appendChild(tab);
+            });
+        }
+
+        // Render poses with multiple image management
+        function vivahproRenderPoses() {
+            const container = document.getElementById('vivahpro-poses-container');
+            container.innerHTML = '';
+            
+            const filteredPoses = vivahproData.poses.filter(pose => 
+                pose.ceremonyId === vivahproData.currentCeremony && 
+                pose.categoryId === vivahproData.currentCategory
+            );
+            
+            const totalPoses = filteredPoses.length;
+            const totalPages = Math.ceil(totalPoses / vivahproData.pageSize);
+            const startIndex = (vivahproData.currentPage - 1) * vivahproData.pageSize;
+            const endIndex = Math.min(startIndex + vivahproData.pageSize, totalPoses);
+            const posesToShow = filteredPoses.slice(startIndex, endIndex);
+            
+            document.getElementById('vivahpro-current-page').textContent = vivahproData.currentPage;
+            document.getElementById('vivahpro-total-pages').textContent = totalPages;
+            
+            document.getElementById('vivahpro-prev-page').disabled = vivahproData.currentPage === 1;
+            document.getElementById('vivahpro-next-page').disabled = vivahproData.currentPage === totalPages;
+            
+            if (posesToShow.length === 0) {
+                container.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; color: var(--medium);">
+                        <i class="fas fa-images" style="font-size: 4rem; margin-bottom: 20px; display: block; opacity: 0.3;"></i>
+                        <h3>No poses found for this category</h3>
+                        <p>Try selecting a different ceremony or category</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            posesToShow.forEach(pose => {
+                const card = document.createElement('div');
+                card.className = `vivahpro-pose-card ${pose.selected ? 'selected' : ''}`;
+                card.setAttribute('data-id', pose.id);
+                card.setAttribute('data-pose-name', pose.name);
+                
+                // Create saved images grid HTML
+                let savedImagesHTML = '';
+                if (pose.imageUrls && pose.imageUrls.length > 0) {
+                    pose.imageUrls.forEach((url, index) => {
+                        savedImagesHTML += `
+                            <div class="vivahpro-saved-image-item">
+                                <img src="${url}" alt="Image ${index + 1} for ${pose.name}" class="vivahpro-saved-image" 
+                                     onclick="vivahproOpenImageModal('${url}', '${pose.name} - Image ${index + 1}')">
+                                <button class="vivahpro-image-remove-btn" data-pose-id="${pose.id}" data-image-index="${index}">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        `;
+                    });
+                }
+                
+                card.innerHTML = `
+                    <div class="vivahpro-pose-header">
+                        <div>
+                            <div class="vivahpro-pose-name">${pose.name}</div>
+                            <span class="vivahpro-pose-style">${pose.style}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="vivahpro-images-container">
+                        <!-- Saved Images Section -->
+                        <div class="vivahpro-saved-images-section">
+                            <div class="vivahpro-images-title">
+                                <i class="fas fa-images"></i>
+                                Saved Images (${pose.imageUrls ? pose.imageUrls.length : 0})
+                            </div>
+                            ${pose.imageUrls && pose.imageUrls.length > 0 ? 
+                                `<div class="vivahpro-saved-images-grid">${savedImagesHTML}</div>` : 
+                                `<div class="vivahpro-no-images-placeholder">
+                                    <i class="fas fa-image"></i>
+                                    <span>No images saved yet</span>
+                                </div>`
+                            }
+                        </div>
+                        
+                        <!-- Add New Image Section -->
+                        <div class="vivahpro-add-image-section">
+                            <div class="vivahpro-images-title">
+                                <i class="fas fa-plus-circle"></i>
+                                Add New Image
+                            </div>
+                            <div class="vivahpro-image-input-group">
+                                <input type="text" 
+                                       class="vivahpro-image-url-input" 
+                                       placeholder="Enter image URL (e.g., https://example.com/photo.jpg)"
+                                       data-pose-id="${pose.id}"
+                                       id="image-input-${pose.id}">
+                                <button class="vivahpro-image-action-btn vivahpro-save-image-btn" data-pose-id="${pose.id}">
+                                    <i class="fas fa-save"></i> Save
+                                </button>
+                                <button class="vivahpro-image-action-btn vivahpro-add-image-btn" data-pose-id="${pose.id}">
+                                    <i class="fas fa-plus"></i> Add Another
+                                </button>
+                            </div>
+                            <button class="vivahpro-image-action-btn vivahpro-unsave-all-btn" data-pose-id="${pose.id}">
+                                <i class="fas fa-trash"></i> Remove All Images
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="vivahpro-pose-details">
+                        <div class="vivahpro-detail-row">
+                            <i class="fas fa-camera"></i>
+                            <span class="vivahpro-detail-label">Camera Settings:</span>
+                            <span>${pose.cameraSettings}</span>
+                        </div>
+                        <div class="vivahpro-detail-row">
+                            <i class="fas fa-eye"></i>
+                            <span class="vivahpro-detail-label">Lens:</span>
+                            <span>${pose.lens}</span>
+                        </div>
+                        <div class="vivahpro-detail-row">
+                            <i class="fas fa-tools"></i>
+                            <span class="vivahpro-detail-label">Equipment:</span>
+                            <span>${pose.equipment}</span>
+                        </div>
+                    </div>
+                    <div class="vivahpro-select-checkbox ${pose.selected ? 'selected' : ''}">
+                        <i class="fas ${pose.selected ? 'fa-check' : 'fa-plus'}"></i>
+                    </div>
+                `;
+                
+                // Add event listeners
+                const selectBtn = card.querySelector('.vivahpro-select-checkbox');
+                selectBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    vivahproTogglePoseSelection(pose.id);
+                });
+                
+                // Save image button
+                const saveBtn = card.querySelector('.vivahpro-save-image-btn');
+                saveBtn.addEventListener('click', () => {
+                    const input = card.querySelector('.vivahpro-image-url-input');
+                    const url = input.value.trim();
+                    if (url) {
+                        vivahproAddImageToPose(pose.id, url);
+                        input.value = '';
+                    } else {
+                        vivahproShowToast('Please enter a valid image URL', true);
+                    }
+                });
+                
+                // Add another image button
+                const addBtn = card.querySelector('.vivahpro-add-image-btn');
+                addBtn.addEventListener('click', () => {
+                    const input = card.querySelector('.vivahpro-image-url-input');
+                    const url = input.value.trim();
+                    if (url) {
+                        vivahproAddImageToPose(pose.id, url);
+                        input.value = '';
+                        input.focus();
+                    } else {
+                        vivahproShowToast('Please enter a valid image URL', true);
+                    }
+                });
+                
+                // Unsave all images button
+                const unsaveAllBtn = card.querySelector('.vivahpro-unsave-all-btn');
+                unsaveAllBtn.addEventListener('click', () => {
+                    vivahproUnsaveAllImages(pose.id);
+                    vivahproRenderPoses();
+                });
+                
+                // Remove individual image buttons
+                const removeBtns = card.querySelectorAll('.vivahpro-image-remove-btn');
+                removeBtns.forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const poseId = parseInt(btn.getAttribute('data-pose-id'));
+                        const imageIndex = parseInt(btn.getAttribute('data-image-index'));
+                        vivahproRemoveImageFromPose(poseId, imageIndex);
+                    });
+                });
+                
+                // Allow Enter key to save image
+                const imageInput = card.querySelector('.vivahpro-image-url-input');
+                imageInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        const url = imageInput.value.trim();
+                        if (url) {
+                            vivahproAddImageToPose(pose.id, url);
+                            imageInput.value = '';
+                        }
+                    }
+                });
+                
+                container.appendChild(card);
+            });
+            
+            const info = document.createElement('div');
+            info.style.gridColumn = '1 / -1';
+            info.style.textAlign = 'center';
+            info.style.padding = '20px';
+            info.style.color = 'var(--medium)';
+            info.innerHTML = `<i class="fas fa-info-circle"></i> Showing ${startIndex + 1}-${endIndex} of ${totalPoses} poses for this category.`;
+            container.appendChild(info);
+        }
+
+        // Open image in modal
+        window.vivahproOpenImageModal = function(imageUrl, title) {
+            const modal = document.getElementById('vivahpro-image-modal');
+            const modalImage = document.getElementById('vivahpro-modal-image');
+            modalImage.src = imageUrl;
+            modalImage.alt = title;
+            modal.classList.add('show');
+        };
+
+        // Add image to pose
+        function vivahproAddImageToPose(poseId, imageUrl) {
+            const pose = vivahproData.poses.find(p => p.id === poseId);
+            if (!pose) return false;
+            
+            // Validate URL
+            if (!imageUrl.startsWith('http')) {
+                imageUrl = 'https://' + imageUrl;
+            }
+            
+            // Check if URL already exists
+            if (pose.imageUrls && pose.imageUrls.includes(imageUrl)) {
+                vivahproShowToast('This image is already saved for this pose!', true);
+                return false;
+            }
+            
+            // Initialize imageUrls array if it doesn't exist
+            if (!pose.imageUrls) {
+                pose.imageUrls = [];
+            }
+            
+            // Add the new image URL
+            pose.imageUrls.push(imageUrl);
+            
+            // Save to localStorage
+            vivahproSaveImageUrls();
+            
+            // Re-render the pose to show the new image
+            vivahproRenderPoses();
+            
+            vivahproShowToast('Image saved successfully!');
+            return true;
+        }
+
+        // Remove image from pose
+        function vivahproRemoveImageFromPose(poseId, imageIndex) {
+            const pose = vivahproData.poses.find(p => p.id === poseId);
+            if (!pose || !pose.imageUrls || !pose.imageUrls[imageIndex]) return false;
+            
+            // Remove the image at the specified index
+            pose.imageUrls.splice(imageIndex, 1);
+            
+            // Save to localStorage
+            vivahproSaveImageUrls();
+            
+            // Re-render the pose to reflect changes
+            vivahproRenderPoses();
+            
+            vivahproShowToast('Image removed successfully!');
+            return true;
+        }
+
+        // Pagination functions
+        function vivahproPreviousPage() {
+            if (vivahproData.currentPage > 1) {
+                vivahproData.currentPage--;
+                vivahproRenderPoses();
+            }
+        }
+
+        function vivahproNextPage() {
+            const filteredPoses = vivahproData.poses.filter(pose => 
+                pose.ceremonyId === vivahproData.currentCeremony && 
+                pose.categoryId === vivahproData.currentCategory
+            );
+            const totalPages = Math.ceil(filteredPoses.length / vivahproData.pageSize);
+            
+            if (vivahproData.currentPage < totalPages) {
+                vivahproData.currentPage++;
+                vivahproRenderPoses();
+            }
+        }
+
+        // Toggle pose selection
+        function vivahproTogglePoseSelection(poseId) {
+            const pose = vivahproData.poses.find(p => p.id === poseId);
+            
+            if (!pose) return;
+            
+            pose.selected = !pose.selected;
+            
+            if (pose.selected) {
+                if (!vivahproData.selectedPoses.includes(poseId)) {
+                    vivahproData.selectedPoses.push(poseId);
+                }
+            } else {
+                const index = vivahproData.selectedPoses.indexOf(poseId);
+                if (index > -1) {
+                    vivahproData.selectedPoses.splice(index, 1);
+                }
+            }
+            
+            // Save selected poses
+            vivahproSaveSelectedPoses();
+            
+            vivahproRenderPoses();
+            vivahproRenderSelectedPoses();
+            vivahproUpdateStats();
+            vivahproGenerateAISuggestions();
+        }
+
+        // Render selected poses with images
+        function vivahproRenderSelectedPoses() {
+            const container = document.getElementById('vivahpro-selections-list');
+            const emptyState = document.getElementById('vivahpro-empty-state');
+            
+            if (vivahproData.selectedPoses.length > 0) {
+                emptyState.style.display = 'none';
+                
+                const selectionItems = container.querySelectorAll('.vivahpro-selection-item');
+                selectionItems.forEach(item => item.remove());
+                
+                const posesToShow = vivahproData.selectedPoses.slice(-10);
+                
+                posesToShow.forEach(poseId => {
+                    const pose = vivahproData.poses.find(p => p.id === poseId);
+                    if (!pose) return;
+                    
+                    const ceremony = vivahproData.ceremonies.find(c => c.id === pose.ceremonyId);
+                    const category = vivahproData.categories.find(c => c.id === pose.categoryId);
+                    
+                    const selectionItem = document.createElement('div');
+                    selectionItem.className = 'vivahpro-selection-item';
+                    
+                    // Get first image if available
+                    const firstImage = pose.imageUrls && pose.imageUrls.length > 0 ? pose.imageUrls[0] : null;
+                    
+                    selectionItem.innerHTML = `
+                        <div class="vivahpro-selection-header">
+                            <div>
+                                <div class="vivahpro-selection-name">${pose.name}</div>
+                                <div class="vivahpro-selection-ceremony">${ceremony.name} • ${category.name}</div>
+                                <div class="vivahpro-selection-ceremony" style="margin-top: 5px; font-size: 0.8rem; color: var(--accent);">
+                                    <i class="fas fa-images"></i> ${pose.imageUrls ? pose.imageUrls.length : 0} images saved
+                                </div>
+                            </div>
+                            <div class="vivahpro-remove-selection" data-id="${pose.id}">
+                                <i class="fas fa-times"></i>
+                            </div>
+                        </div>
+                        ${firstImage ? 
+                            `<img src="${firstImage}" alt="${pose.name}" class="vivahpro-selection-image" 
+                                 onerror="this.onerror=null; this.style.background='var(--light-gray)'; this.innerHTML='<div style=\"text-align:center; padding:10px;\"><i class=\"fas fa-image\"></i><br>Image not found</div>';" 
+                                 style="width:100%; height:100px; object-fit:cover; border-radius:8px; cursor: pointer;"
+                                 onclick="vivahproOpenImageModal('${firstImage}', '${pose.name}')">` : 
+                            `<div class="vivahpro-selection-image" style="display:flex; align-items:center; justify-content:center;">
+                                <div style="text-align:center;">
+                                    <i class="fas fa-image" style="font-size:1.5rem; margin-bottom:5px;"></i><br>
+                                    <span style="font-size:0.8rem;">No image saved</span>
+                                </div>
+                            </div>`
+                        }
+                        <div class="vivahpro-selection-details">
+                            <div><i class="fas fa-palette"></i> <strong>Style:</strong> ${pose.style}</div>
+                            <div><i class="fas fa-camera"></i> <strong>Settings:</strong> ${pose.cameraSettings}</div>
+                            <div><i class="fas fa-eye"></i> <strong>Lens:</strong> ${pose.lens}</div>
+                        </div>
+                    `;
+                    
+                    const removeBtn = selectionItem.querySelector('.vivahpro-remove-selection');
+                    removeBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        vivahproTogglePoseSelection(pose.id);
+                    });
+                    
+                    container.appendChild(selectionItem);
+                });
+                
+                if (vivahproData.selectedPoses.length > 10) {
+                    const message = document.createElement('div');
+                    message.style.textAlign = 'center';
+                    message.style.padding = '10px';
+                    message.style.color = 'var(--medium)';
+                    message.style.fontSize = '0.9rem';
+                    message.innerHTML = `<i class="fas fa-ellipsis-h"></i> Showing 10 of ${vivahproData.selectedPoses.length} selected poses`;
+                    container.appendChild(message);
+                }
+            } else {
+                emptyState.style.display = 'block';
+            }
+        }
+
+        // Update statistics
+        function vivahproUpdateStats() {
+            document.getElementById('vivahpro-selected-count').textContent = vivahproData.selectedPoses.length;
+            document.getElementById('vivahpro-selected-poses').textContent = vivahproData.selectedPoses.length;
+            
+            const filteredPoses = vivahproData.poses.filter(pose => 
+                pose.ceremonyId === vivahproData.currentCeremony && 
+                pose.categoryId === vivahproData.currentCategory
+            );
+            
+            const totalPages = Math.ceil(filteredPoses.length / vivahproData.pageSize);
+            document.getElementById('vivahpro-total-pages').textContent = totalPages;
+            
+            // Update image statistics
+            vivahproUpdateImageStats();
+        }
+
+        // Filter poses
+        function vivahproFilterPoses() {
+            const searchTerm = document.getElementById('vivahpro-pose-search').value.toLowerCase();
+            
+            if (!searchTerm) {
+                vivahproRenderPoses();
+                return;
+            }
+            
+            const container = document.getElementById('vivahpro-poses-container');
+            container.innerHTML = '';
+            
+            const filteredPoses = vivahproData.poses.filter(pose => 
+                pose.ceremonyId === vivahproData.currentCeremony && 
+                pose.categoryId === vivahproData.currentCategory &&
+                (
+                    pose.name.toLowerCase().includes(searchTerm) ||
+                    pose.style.toLowerCase().includes(searchTerm) ||
+                    pose.cameraSettings.toLowerCase().includes(searchTerm) ||
+                    pose.lens.toLowerCase().includes(searchTerm) ||
+                    pose.equipment.toLowerCase().includes(searchTerm)
+                )
+            );
+            
+            vivahproData.currentPage = 1;
+            
+            if (filteredPoses.length === 0) {
+                container.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; color: var(--medium);">
+                        <i class="fas fa-search" style="font-size: 4rem; margin-bottom: 20px; display: block; opacity: 0.3;"></i>
+                        <h3>No poses match your search</h3>
+                        <p>Try different keywords or clear your search</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            const totalPoses = filteredPoses.length;
+            const totalPages = Math.ceil(totalPoses / vivahproData.pageSize);
+            const startIndex = (vivahproData.currentPage - 1) * vivahproData.pageSize;
+            const endIndex = Math.min(startIndex + vivahproData.pageSize, totalPoses);
+            const posesToShow = filteredPoses.slice(startIndex, endIndex);
+            
+            document.getElementById('vivahpro-current-page').textContent = vivahproData.currentPage;
+            document.getElementById('vivahpro-total-pages').textContent = totalPages;
+            
+            // Reuse the pose rendering logic for filtered results
+            // This is simplified - in a real implementation, you'd refactor to reuse the pose rendering function
+            posesToShow.forEach(pose => {
+                const card = document.createElement('div');
+                card.className = `vivahpro-pose-card ${pose.selected ? 'selected' : ''}`;
+                card.setAttribute('data-id', pose.id);
+                
+                // Create saved images grid HTML for filtered view
+                let savedImagesHTML = '';
+                if (pose.imageUrls && pose.imageUrls.length > 0) {
+                    pose.imageUrls.forEach((url, index) => {
+                        savedImagesHTML += `
+                            <div class="vivahpro-saved-image-item">
+                                <img src="${url}" alt="Image ${index + 1} for ${pose.name}" class="vivahpro-saved-image" 
+                                     onclick="vivahproOpenImageModal('${url}', '${pose.name} - Image ${index + 1}')">
+                                <button class="vivahpro-image-remove-btn" data-pose-id="${pose.id}" data-image-index="${index}">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        `;
+                    });
+                }
+                
+                card.innerHTML = `
+                    <div class="vivahpro-pose-header">
+                        <div>
+                            <div class="vivahpro-pose-name">${pose.name}</div>
+                            <span class="vivahpro-pose-style">${pose.style}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="vivahpro-images-container">
+                        <div class="vivahpro-saved-images-section">
+                            <div class="vivahpro-images-title">
+                                <i class="fas fa-images"></i>
+                                Saved Images (${pose.imageUrls ? pose.imageUrls.length : 0})
+                            </div>
+                            ${pose.imageUrls && pose.imageUrls.length > 0 ? 
+                                `<div class="vivahpro-saved-images-grid">${savedImagesHTML}</div>` : 
+                                `<div class="vivahpro-no-images-placeholder">
+                                    <i class="fas fa-image"></i>
+                                    <span>No images saved yet</span>
+                                </div>`
+                            }
+                        </div>
+                        
+                        <div class="vivahpro-add-image-section">
+                            <div class="vivahpro-images-title">
+                                <i class="fas fa-plus-circle"></i>
+                                Add New Image
+                            </div>
+                            <div class="vivahpro-image-input-group">
+                                <input type="text" 
+                                       class="vivahpro-image-url-input" 
+                                       placeholder="Enter image URL"
+                                       data-pose-id="${pose.id}"
+                                       id="image-input-${pose.id}">
+                                <button class="vivahpro-image-action-btn vivahpro-save-image-btn" data-pose-id="${pose.id}">
+                                    <i class="fas fa-save"></i> Save
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="vivahpro-pose-details">
+                        <div class="vivahpro-detail-row">
+                            <i class="fas fa-camera"></i>
+                            <span class="vivahpro-detail-label">Camera Settings:</span>
+                            <span>${pose.cameraSettings}</span>
+                        </div>
+                        <div class="vivahpro-detail-row">
+                            <i class="fas fa-eye"></i>
+                            <span class="vivahpro-detail-label">Lens:</span>
+                            <span>${pose.lens}</span>
+                        </div>
+                        <div class="vivahpro-detail-row">
+                            <i class="fas fa-tools"></i>
+                            <span class="vivahpro-detail-label">Equipment:</span>
+                            <span>${pose.equipment}</span>
+                        </div>
+                    </div>
+                    <div class="vivahpro-select-checkbox ${pose.selected ? 'selected' : ''}">
+                        <i class="fas ${pose.selected ? 'fa-check' : 'fa-plus'}"></i>
+                    </div>
+                `;
+                
+                // Add basic event listeners for filtered view
+                const selectBtn = card.querySelector('.vivahpro-select-checkbox');
+                selectBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    vivahproTogglePoseSelection(pose.id);
+                });
+                
+                const saveBtn = card.querySelector('.vivahpro-save-image-btn');
+                saveBtn.addEventListener('click', () => {
+                    const input = card.querySelector('.vivahpro-image-url-input');
+                    const url = input.value.trim();
+                    if (url) {
+                        vivahproAddImageToPose(pose.id, url);
+                        input.value = '';
+                    }
+                });
+                
+                const removeBtns = card.querySelectorAll('.vivahpro-image-remove-btn');
+                removeBtns.forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const poseId = parseInt(btn.getAttribute('data-pose-id'));
+                        const imageIndex = parseInt(btn.getAttribute('data-image-index'));
+                        vivahproRemoveImageFromPose(poseId, imageIndex);
+                    });
+                });
+                
+                const imageInput = card.querySelector('.vivahpro-image-url-input');
+                imageInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        const url = imageInput.value.trim();
+                        if (url) {
+                            vivahproAddImageToPose(pose.id, url);
+                            imageInput.value = '';
+                        }
+                    }
+                });
+                
+                container.appendChild(card);
+            });
+            
+            const info = document.createElement('div');
+            info.style.gridColumn = '1 / -1';
+            info.style.textAlign = 'center';
+            info.style.padding = '20px';
+            info.style.color = 'var(--medium)';
+            info.innerHTML = `<i class="fas fa-search"></i> Found ${totalPoses} poses matching "${searchTerm}"`;
+            container.appendChild(info);
+        }
+
+        // Generate AI suggestions
+        function vivahproGenerateAISuggestions() {
+            const container = document.getElementById('vivahpro-ai-suggestions');
+            container.innerHTML = '';
+            
+            const currentCeremony = vivahproData.ceremonies.find(c => c.id === vivahproData.currentCeremony);
+            const currentCategory = vivahproData.categories.find(c => c.id === vivahproData.currentCategory);
+            
+            const ceremonySuggestions = {
+                1: [
+                    "Use golden hour lighting for romantic pre-wedding shots.",
+                    "Incorporate local scenery and landmarks for unique backdrops.",
+                    "Direct the couple to interact naturally rather than pose stiffly."
+                ],
+                2: [
+                    "Focus on ring close-ups with macro lens for detail shots.",
+                    "Capture the moment of ring exchange from multiple angles.",
+                    "Use natural light for soft, romantic engagement portraits."
+                ],
+                3: [
+                    "Shoot mehendi designs in stages: fresh, drying, and final.",
+                    "Use a macro lens to capture intricate henna patterns.",
+                    "Position subjects near windows for even lighting on hands."
+                ],
+                4: [
+                    "Use fast shutter speed (1/500s or faster) to freeze dance movements.",
+                    "Capture performers from low angles for dramatic effect.",
+                    "Get wide shots of the entire dance floor to show energy."
+                ],
+                5: [
+                    "Use the yellow turmeric against colorful outfits for contrast.",
+                    "Capture the messy, joyful moments of turmeric application.",
+                    "Shoot from above to get unique angles of the ceremony."
+                ],
+                6: [
+                    "Position two photographers on opposite sides for garland exchange.",
+                    "Use a telephoto lens (70-200mm) for intimate moments from a distance.",
+                    "Capture the moment when garlands are lifted before exchange."
+                ],
+                7: [
+                    "Capture details: jewelry, shoes, makeup, and accessories.",
+                    "Shoot through mirrors for creative compositions.",
+                    "Document the emotional moments with family members."
+                ],
+                8: [
+                    "Focus on traditional attire details: turban, sword, shoes.",
+                    "Capture the groom's nervous excitement before the ceremony.",
+                    "Include friends and family helping with preparations."
+                ],
+                9: [
+                    "Capture the emotional greetings between families.",
+                    "Use a wide lens to show the entire meeting scene.",
+                    "Focus on traditional greeting rituals like garland exchange."
+                ],
+                10: [
+                    "During pheras, capture the couple's expressions as they circle the fire.",
+                    "Use a tripod for long exposure shots of fire rituals.",
+                    "Position yourself to capture both the couple and the priest during mantras."
+                ],
+                11: [
+                    "Use off-camera flash for well-lit reception portraits.",
+                    "Capture candid moments during speeches and toasts.",
+                    "Get wide shots of the venue decor before guests arrive."
+                ],
+                12: [
+                    "Use a fast lens (f/1.8 or wider) for emotional low-light moments.",
+                    "Capture the bride's last look at her parental home.",
+                    "Focus on the family's emotional expressions during farewell."
+                ]
+            };
+            
+            const categorySuggestions = {
+                1: [
+                    "Shoot in RAW format for maximum editing flexibility.",
+                    "Bracket your exposures for high-contrast scenes.",
+                    "Use a polarizing filter to reduce glare and enhance colors."
+                ],
+                2: [
+                    "Shoot at 60fps for smooth slow-motion footage.",
+                    "Use a shotgun mic for clear audio during ceremonies.",
+                    "Keep your shots steady with a gimbal or tripod."
+                ],
+                3: [
+                    "Use drone shots to establish venue location and scale.",
+                    "Create smooth slider shots for cinematic movements.",
+                    "Shoot during golden hour for warm, cinematic lighting."
+                ],
+                4: [
+                    "Blend into the background to capture natural moments.",
+                    "Use a silent shutter mode to avoid disturbing moments.",
+                    "Anticipate reactions by watching facial expressions."
+                ],
+                5: [
+                    "Direct subjects using traditional poses and hand gestures.",
+                    "Use symmetrical compositions for formal traditional shots.",
+                    "Incorporate cultural elements in the background for context."
+                ]
+            };
+            
+            const suggestions = [
+                ...ceremonySuggestions[vivahproData.currentCeremony],
+                ...categorySuggestions[vivahproData.currentCategory],
+                `You have selected ${vivahproData.selectedPoses.length} poses. Consider balancing wide, medium, and close-up shots.`,
+                `For ${currentCeremony.name} ${currentCategory.name}, make sure to capture both details and overall scenes.`,
+                `Tip: Save multiple reference images for each pose to capture different angles and lighting conditions.`
+            ];
+            
+            const selectedSuggestions = [];
+            while (selectedSuggestions.length < 3 && suggestions.length > 0) {
+                const randomIndex = Math.floor(Math.random() * suggestions.length);
+                if (!selectedSuggestions.includes(suggestions[randomIndex])) {
+                    selectedSuggestions.push(suggestions[randomIndex]);
+                }
+            }
+            
+            const suggestionTitles = ["Pro Tip", "Equipment Advice", "Composition Idea", "Lighting Tip", "Timing Suggestion"];
+            
+            selectedSuggestions.forEach((suggestion, index) => {
+                const suggestionDiv = document.createElement('div');
+                suggestionDiv.className = 'vivahpro-ai-suggestion';
+                suggestionDiv.innerHTML = `
+                    <h4><i class="fas fa-lightbulb"></i> ${suggestionTitles[index] || "AI Suggestion"}</h4>
+                    <p>${suggestion}</p>
+                `;
+                container.appendChild(suggestionDiv);
+            });
+            
+            const aiBtn = document.getElementById('vivahpro-ai-generate-btn');
+            aiBtn.innerHTML = '<i class="fas fa-check"></i> Suggestions Updated';
+            aiBtn.style.background = 'linear-gradient(135deg, #27ae60 0%, #2ecc71 100%)';
+            
+            setTimeout(() => {
+                aiBtn.innerHTML = '<i class="fas fa-magic"></i> Generate AI Tips';
+                aiBtn.style.background = 'linear-gradient(135deg, #2E8B57 0%, #3CB371 100%)';
+            }, 2000);
+        }
+
+        // Save plan function - UPDATED to include multiple images
+        function vivahproSavePlan() {
+            if (vivahproData.selectedPoses.length === 0) {
+                alert('Please select at least one pose before saving your plan.');
+                return;
+            }
+            
+            const planData = {
+                date: new Date().toLocaleDateString(),
+                ceremony: vivahproData.ceremonies.find(c => c.id === vivahproData.currentCeremony).name,
+                category: vivahproData.categories.find(c => c.id === vivahproData.currentCategory).name,
+                selectedPoses: vivahproData.selectedPoses.map(id => {
+                    const pose = vivahproData.poses.find(p => p.id === id);
+                    const ceremony = vivahproData.ceremonies.find(c => c.id === pose.ceremonyId);
+                    const category = vivahproData.categories.find(c => c.id === pose.categoryId);
+                    return {
+                        name: pose.name,
+                        ceremony: ceremony.name,
+                        category: category.name,
+                        style: pose.style,
+                        cameraSettings: pose.cameraSettings,
+                        lens: pose.lens,
+                        equipment: pose.equipment,
+                        imageUrls: pose.imageUrls || [], // Include all image URLs
+                        totalImages: pose.imageUrls ? pose.imageUrls.length : 0
+                    };
+                }),
+                totalImages: vivahproData.selectedPoses.reduce((total, poseId) => {
+                    const pose = vivahproData.poses.find(p => p.id === poseId);
+                    return total + (pose.imageUrls ? pose.imageUrls.length : 0);
+                }, 0)
+            };
+            
+            localStorage.setItem(VIVAHPRO_STORAGE_KEYS.SHOT_PLAN, JSON.stringify(planData));
+            
+            // Also save image URLs
+            vivahproSaveImageUrls();
+            
+            alert(`Shot plan saved successfully! You have ${vivahproData.selectedPoses.length} poses with ${planData.totalImages} images in your plan.`);
+            
+            const saveBtn = document.getElementById('vivahpro-save-plan-btn');
+            saveBtn.innerHTML = '<i class="fas fa-check"></i> Plan Saved!';
+            saveBtn.style.background = 'linear-gradient(135deg, #27ae60 0%, #2ecc71 100%)';
+            
+            setTimeout(() => {
+                saveBtn.innerHTML = '<i class="fas fa-save"></i> Save Shot Plan';
+                saveBtn.style.background = 'var(--gold-gradient)';
+            }, 2000);
+        }
+
+        // Export plan function - UPDATED to include multiple images
+        function vivahproExportPlan() {
+            if (vivahproData.selectedPoses.length === 0) {
+                alert('No selections to export. Please select some poses first.');
+                return;
+            }
+            
+            let exportText = "VIVAH PRO ULTIMATE - COMPLETE HINDU WEDDING SHOT PLAN\n";
+            exportText += "=========================================================\n\n";
+            exportText += `Generated: ${new Date().toLocaleString()}\n`;
+            exportText += `Total Shots: ${vivahproData.selectedPoses.length}\n`;
+            
+            // Calculate total images
+            const totalImages = vivahproData.selectedPoses.reduce((total, poseId) => {
+                const pose = vivahproData.poses.find(p => p.id === poseId);
+                return total + (pose.imageUrls ? pose.imageUrls.length : 0);
+            }, 0);
+            
+            exportText += `Total Images: ${totalImages}\n\n`;
+            exportText += "SELECTED SHOTS:\n";
+            exportText += "===============\n\n";
+            
+            vivahproData.selectedPoses.forEach((poseId, index) => {
+                const pose = vivahproData.poses.find(p => p.id === poseId);
+                const ceremony = vivahproData.ceremonies.find(c => c.id === pose.ceremonyId);
+                const category = vivahproData.categories.find(c => c.id === pose.categoryId);
+                
+                exportText += `${index + 1}. ${pose.name}\n`;
+                exportText += `   Ceremony: ${ceremony.name}\n`;
+                exportText += `   Category: ${category.name}\n`;
+                exportText += `   Style: ${pose.style}\n`;
+                exportText += `   Settings: ${pose.cameraSettings}\n`;
+                exportText += `   Lens: ${pose.lens}\n`;
+                exportText += `   Equipment: ${pose.equipment}\n`;
+                exportText += `   Images: ${pose.imageUrls ? pose.imageUrls.length : 0}\n`;
+                
+                // List all image URLs for this pose
+                if (pose.imageUrls && pose.imageUrls.length > 0) {
+                    pose.imageUrls.forEach((url, imgIndex) => {
+                        exportText += `      Image ${imgIndex + 1}: ${url}\n`;
+                    });
+                }
+                exportText += '\n';
+            });
+            
+            // Add all image URLs section
+            const imageUrls = vivahproLoadSavedImageUrls();
+            if (Object.keys(imageUrls).length > 0) {
+                exportText += "\nALL SAVED IMAGE URLs:\n";
+                exportText += "=====================\n\n";
+                
+                Object.entries(imageUrls).forEach(([poseId, urls]) => {
+                    const pose = vivahproData.poses.find(p => p.id === parseInt(poseId));
+                    if (pose && urls.length > 0) {
+                        exportText += `Pose ID ${poseId}: ${pose.name}\n`;
+                        urls.forEach((url, index) => {
+                            exportText += `   Image ${index + 1}: ${url}\n`;
+                        });
+                        exportText += '\n';
+                    }
+                });
+            }
+            
+            const blob = new Blob([exportText], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `vivahpro_complete_plan_${new Date().toISOString().slice(0, 10)}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            alert('Complete shot plan exported successfully!');
+        }
+
+        // Print summary function - UPDATED to include multiple images
+        function vivahproPrintSummary() {
+            if (vivahproData.selectedPoses.length === 0) {
+                alert('No selections to print. Please select some poses first.');
+                return;
+            }
+            
+            const printWindow = window.open('', '_blank');
+            printWindow.document.write(`
+                <html>
+                <head>
+                    <title>VivahPro Ultimate Shot Plan</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; padding: 20px; }
+                        h1 { color: #8B0000; border-bottom: 2px solid #FFD700; padding-bottom: 10px; }
+                        .pose { margin-bottom: 20px; padding: 15px; border-left: 4px solid #8B0000; background: #f9f5f0; }
+                        .pose-header { font-weight: bold; color: #8B0000; font-size: 1.2em; }
+                        .pose-details { margin-top: 10px; }
+                        .image-info { margin-top: 10px; font-style: italic; }
+                        .image-list { margin-left: 20px; }
+                        @media print {
+                            body { font-size: 12pt; }
+                            .pose { page-break-inside: avoid; }
+                        }
+                    </style>
+                </head>
+                <body>
+                    <h1>VivahPro Ultimate Hindu Wedding Shot Plan</h1>
+                    <p><strong>Generated:</strong> ${new Date().toLocaleString()}</p>
+                    <p><strong>Total Shots Selected:</strong> ${vivahproData.selectedPoses.length}</p>
+            `);
+            
+            // Calculate total images
+            const totalImages = vivahproData.selectedPoses.reduce((total, poseId) => {
+                const pose = vivahproData.poses.find(p => p.id === poseId);
+                return total + (pose.imageUrls ? pose.imageUrls.length : 0);
+            }, 0);
+            
+            printWindow.document.write(`<p><strong>Total Images:</strong> ${totalImages}</p>`);
+            printWindow.document.write(`<hr>`);
+            
+            vivahproData.selectedPoses.forEach((poseId, index) => {
+                const pose = vivahproData.poses.find(p => p.id === poseId);
+                const ceremony = vivahproData.ceremonies.find(c => c.id === pose.ceremonyId);
+                const category = vivahproData.categories.find(c => c.id === pose.categoryId);
+                
+                printWindow.document.write(`
+                    <div class="pose">
+                        <div class="pose-header">${index + 1}. ${pose.name}</div>
+                        <div class="pose-details">
+                            <p><strong>Ceremony:</strong> ${ceremony.name}</p>
+                            <p><strong>Category:</strong> ${category.name}</p>
+                            <p><strong>Style:</strong> ${pose.style}</p>
+                            <p><strong>Camera Settings:</strong> ${pose.cameraSettings}</p>
+                            <p><strong>Lens:</strong> ${pose.lens}</p>
+                            <p><strong>Equipment:</strong> ${pose.equipment}</p>
+                            <p class="image-info"><strong>Images (${pose.imageUrls ? pose.imageUrls.length : 0}):</strong></p>
+                `);
+                
+                if (pose.imageUrls && pose.imageUrls.length > 0) {
+                    printWindow.document.write('<div class="image-list">');
+                    pose.imageUrls.forEach((url, imgIndex) => {
+                        printWindow.document.write(`<p>${imgIndex + 1}. ${url}</p>`);
+                    });
+                    printWindow.document.write('</div>');
+                } else {
+                    printWindow.document.write('<p>No images saved</p>');
+                }
+                
+                printWindow.document.write('</div></div>');
+            });
+            
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            printWindow.focus();
+            printWindow.print();
+        }
+
+        // Clear all selections
+        function vivahproClearAllSelections() {
+            if (vivahproData.selectedPoses.length === 0) {
+                alert('No selections to clear.');
+                return;
+            }
+            
+            if (confirm('Are you sure you want to clear all selected poses?')) {
+                vivahproData.poses.forEach(pose => {
+                    pose.selected = false;
+                });
+                
+                vivahproData.selectedPoses = [];
+                vivahproSaveSelectedPoses();
+                
+                vivahproRenderPoses();
+                vivahproRenderSelectedPoses();
+                vivahproUpdateStats();
+                
+                alert('All selections have been cleared.');
+            }
+        }
+
+        // Reset all (with option to keep images)
+        function vivahproResetAll() {
+            if (confirm('This will reset ceremonies, categories, search, and selections. Do you want to keep saved image URLs?')) {
+                // Keep image URLs
+                const keepImages = confirm('Keep saved image URLs? Click OK to keep them, Cancel to delete all image URLs.');
+                
+                if (!keepImages) {
+                    // Clear image URLs from storage
+                    localStorage.removeItem(VIVAHPRO_STORAGE_KEYS.IMAGE_URLS);
+                    // Clear from poses
+                    vivahproData.poses.forEach(pose => {
+                        pose.imageUrls = [];
+                    });
+                }
+                
+                vivahproData.currentCeremony = 6;
+                vivahproData.currentCategory = 1;
+                vivahproData.currentPage = 1;
+                
+                vivahproData.poses.forEach(pose => {
+                    pose.selected = false;
+                });
+                vivahproData.selectedPoses = [];
+                vivahproSaveSelectedPoses();
+                
+                document.getElementById('vivahpro-pose-search').value = '';
+                
+                document.querySelectorAll('.vivahpro-ceremony-item').forEach(c => c.classList.remove('active'));
+                document.querySelector('.vivahpro-ceremony-item[data-id="6"]').classList.add('active');
+                
+                document.querySelectorAll('.vivahpro-category-tab').forEach(t => t.classList.remove('active'));
+                document.querySelector('.vivahpro-category-tab[data-id="1"]').classList.add('active');
+                
+                vivahproRenderPoses();
+                vivahproRenderSelectedPoses();
+                vivahproUpdateStats();
+                vivahproGenerateAISuggestions();
+                
+                vivahproShowToast(keepImages ? 'Reset complete (image URLs kept)!' : 'Reset complete (all data cleared)!');
+            }
+        }
+    </script>
+</body>
+</html>
